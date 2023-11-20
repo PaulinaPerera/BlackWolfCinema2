@@ -9,15 +9,16 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class AuthController {
+public class AuthenticateController {
     @Autowired
-    private UserDao usuarioDao;
+    private UserDao userDao;
 
     @RequestMapping(value= "api/login", method = RequestMethod.POST)
     public String login(@RequestBody User user){
-        if(usuarioDao.verifyEmailAndPassword(user)){
-            return "Ok";
+        String response="Fail";
+        if(userDao.verifyEmailAndPassword(user)){
+            response= "Ok";
         }
-        return "FAIL";
+        return response;
     }
 }

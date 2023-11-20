@@ -1,6 +1,7 @@
 package com.uady.blackWolfCinema.model;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
@@ -10,12 +11,12 @@ import lombok.Setter;
 @Getter
 @Setter
 @EqualsAndHashCode
+@AllArgsConstructor
 public class User {
 
     @Id
-    @Column(name="user_Id")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @Column(name="userName")
+    private String userName;
     @Column(name="name")
     private String name;
     @Column(name="last_Name")
@@ -24,5 +25,7 @@ public class User {
     private String email;
     @Column(name="password")
     private String password;
+    @Column(name="role")
+    private String role;
 
 }

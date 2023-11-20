@@ -13,16 +13,18 @@ import java.util.List;
 @RequestMapping(value="api/users")
 public class UserController {
     @Autowired
-    private UserDao usuarioDao;
+    private UserDao userDao;
 
 
     @PostMapping
-    public void registerUsers(@RequestBody User user) {
+    public void registerUser(@RequestBody User user) {
         Argon2 argon2 = Argon2Factory.create(Argon2Factory.Argon2Types.ARGON2id);
         String hashPassword = argon2.hash(1, 1024, 1, user.getPassword());
         user.setPassword(hashPassword);
-        usuarioDao.register(user);
+        userDao.register(user);
     }
+
+
 
 }
 

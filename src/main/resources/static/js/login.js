@@ -17,11 +17,9 @@ async function iniciarSesion(){
 
     const response= await request.text();
    if(response=='Ok'){
-      alert("You are in")
+        window.location.href= 'http://localhost:8080/index.html'
    }
    else{
       alert("Try again")
    }
-
-
 }
