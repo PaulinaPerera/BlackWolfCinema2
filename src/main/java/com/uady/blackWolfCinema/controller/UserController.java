@@ -7,14 +7,11 @@ import de.mkammerer.argon2.Argon2Factory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-
 @RestController
 @RequestMapping(value="api/users")
 public class UserController {
     @Autowired
     private UserDao userDao;
-
 
     @PostMapping
     public void registerUser(@RequestBody User user) {
@@ -23,7 +20,6 @@ public class UserController {
         user.setPassword(hashPassword);
         userDao.register(user);
     }
-
 
 
 }

@@ -19,7 +19,7 @@ public class CinemaRoom {
     private int cinemaRoomId;
     @Column(name = "total_rows")
     private int rows;
-    @Column(name = "total_colums")
+    @Column(name = "total_columns")
     private int columns;
     @Column(name = "total_seats")
     private int totalSeats;

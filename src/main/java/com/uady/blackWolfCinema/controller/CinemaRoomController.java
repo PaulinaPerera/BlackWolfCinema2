@@ -20,7 +20,7 @@ public class CinemaRoomController {
     }
     @GetMapping("/cinemaRoom/{cinemaRoomID}")
     public CinemaRoom getCinemaRoom(@PathVariable int cinemaRoomID){
-        CinemaRoom theCinemaRoom = cinemaRoomService.findRoomById(cinemaRoomID);
+        CinemaRoom theCinemaRoom = cinemaRoomService.findById(cinemaRoomID);
 
         if(theCinemaRoom ==null){
             throw new RuntimeException("The ID: "+ cinemaRoomID +" does not exist");
